@@ -1,15 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-// Minh
 
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
 	conferenceName := "Go Conference"
+	bookings := []string{}
 
 	fmt.Printf("Welcome to %v booking application.\nWe have total of %v tickets and %v are still available.\nGet your tickets here to attend\n", conferenceName, conferenceTickets, remainingTickets)
 
@@ -31,15 +29,11 @@ func main() {
 	fmt.Println("Enter number of tickets: ")
 	fmt.Scanln(&userTickets)
 
-
-
-	var bookings [50]string
 	// book ticket in system
 	remainingTickets = remainingTickets - userTickets
-	bookings[0]= firstName + " " + lastName
+	bookings = append(bookings, firstName+" "+lastName)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
-
-
+	fmt.Printf("These are all our bookings: %v\n", bookings)
 }
