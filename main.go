@@ -33,19 +33,61 @@ func main() {
 		fmt.Println("Enter number of tickets: ")
 		fmt.Scanln(&userTickets)
 
-		// book ticket in system
-		remainingTickets = remainingTickets - userTickets
-		bookings = append(bookings, firstName+" "+lastName)
+		// validate user input
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
+		isValidEmail := strings.Contains(email, "@")
+		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
 
-		fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
-		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
+		if isValidName && isValidEmail && isValidTicketNumber {
 
-		// print only first names
-		firstNames := []string{}
-		for _, booking := range bookings {
-			var names = strings.Fields(booking)
-			firstNames = append(firstNames, names[0])
+			// book ticket in system
+			remainingTickets = remainingTickets - userTickets
+			bookings = append(bookings, firstName+" "+lastName)
+
+			fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
+			fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
+
+			// print only first names
+			firstNames := []string{}
+			for _, booking := range bookings {
+				var names = strings.Fields(booking)
+				firstNames = append(firstNames, names[0])
+			}
+			fmt.Printf("The first names %v\n", firstNames)
+
+			// exit application if no tickets are left
+			if remainingTickets == 0 {
+				// end program
+				fmt.Println("Our conference is booked out. Come back next year.")
+				break
+			}
+		} else {
+			if !isValidName {
+				fmt.Println("first name or last name you entered is too short")
+			}
+			if !isValidEmail {
+				fmt.Println("email address you entered doesn't contain @ sign")
+			}
+			if !isValidTicketNumber {
+				fmt.Println("number of tickets you entered is invalid")
+			}
+			continue
 		}
-		fmt.Printf("The first names %v\n", firstNames)
+	}
+
+	// Switch statement example
+	city := "London"
+
+	switch city {
+	case "New York":
+		// booking for New York conference
+	case "Singapore", "Hong Kong":
+		// booking for Singapore & Hong Kong conference
+	case "London", "Berlin":
+		// booking for London & Berlin conference
+	case "Mexico City":
+		// booking for Mexico City conference
+	default:
+		fmt.Print("No valid city selected")
 	}
 }
