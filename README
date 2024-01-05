@@ -1,0 +1,18 @@
+## BOOKING APP - LAB
+
+### technology: GoLang
+
+How this app works:
+for one user to use in the terminal
+
+- Starting the app
+- Asking user for information (scan)
+- Bookings updated (append to slice)
+- Applications exited
+
+### Features about GoLang
+
+- Variable
+  - Data Type
+- Array and Slice
+- Loop
