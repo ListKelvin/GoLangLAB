@@ -18,3 +18,14 @@ for one user to use in the terminal
 - Loop
 - If Else
 - Switch case
+
+### Readable Code
+
+- Greet the user -> greetUsers
+- Get the user input -> getUserInput
+- Validate the user input -> validateUserInput
+- If everything is valid
+- Booking the ticket -> bookTicket
+- Get first name -> getFirstNames
+- Print the first name
+- if no ticket left, exist the program
