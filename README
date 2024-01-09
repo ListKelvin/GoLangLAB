@@ -18,6 +18,11 @@ for one user to use in the terminal
 - Loop
 - If Else
 - Switch case
+- package
+- green thread
+- synchronized
+- struct
+- data type
 
 ### Readable Code
 
@@ -29,3 +34,8 @@ for one user to use in the terminal
 - Get first name -> getFirstNames
 - Print the first name
 - if no ticket left, exist the program
+- wait 50s to send the ticket to the user
+
+### Run the program
+
+- go run .

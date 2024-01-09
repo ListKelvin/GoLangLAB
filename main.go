@@ -30,8 +30,8 @@ func main() {
 		isValidName, isValidEmail, isValidTicketNumber := ValidateUserInput(firstName, lastName, email, userTickets)
 
 		if isValidName && isValidEmail && isValidTicketNumber {
-			wg.Add(1)
 			bookTicket(userTickets, firstName, lastName, email)
+			wg.Add(1)
 			go sendTicket(userTickets, firstName, lastName, email)
 
 			firstNames := printFirstNames()
@@ -39,6 +39,7 @@ func main() {
 
 			if remainingTickets == 0 {
 				// end program
+				fmt.Println("Our conference is booked out. Come back next year.")
 				// break
 			}
 		} else {
