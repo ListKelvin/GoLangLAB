@@ -34,7 +34,7 @@ func main() {
 
 	
     // A slice of names.
-    names := []string{"Gladys", "Samantha", "Darrin"}
+    names := []string{"Minh Pham", "Minh Pham", "Darrin"}
   // Request a greeting message.
     messages, err := greetings.Hellos(names)
     // If an error was returned, print it to the console and
